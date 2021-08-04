@@ -6,7 +6,7 @@ public class InteractableGameObject : MonoBehaviour
 {
     public GameObject generator;
     public GameObject generatorText;
-
+    public GameObject nextSceneText;
 
     public void GeneratorDetect()
     {
@@ -18,4 +18,13 @@ public class InteractableGameObject : MonoBehaviour
         generatorText.SetActive(false);
     }
 
+    public void NextSceneDetect()
+    {
+        nextSceneText.SetActive(true);
+    }
+
+    public void NoNextSceneDetect()
+    {
+        nextSceneText.SetActive(false);
+    }
 }

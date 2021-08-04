@@ -11,13 +11,22 @@ public class PlayerRaycast : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 100))
         {
-            if(hit.collider.tag == "generator")
+            if(hit.collider.tag == "NextScene")
+            {
+                GetComponent<InteractableGameObject>().NextSceneDetect();
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    GetComponent<LevelLoader>().LoadNextLevel();
+                }
+            }
+            else if(hit.collider.tag == "Generator")
             {
                 GetComponent<InteractableGameObject>().GeneratorDetect();
             }
             else
             {
                 GetComponent<InteractableGameObject>().NoGeneratorDetect();
+                GetComponent<InteractableGameObject>().NoNextSceneDetect();
             }
         }
     }
