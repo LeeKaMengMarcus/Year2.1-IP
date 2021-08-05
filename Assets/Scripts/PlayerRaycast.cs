@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerRaycast : MonoBehaviour
 {
+    public GameObject dataCharacter;
 
     void Update()
     {
@@ -23,10 +24,21 @@ public class PlayerRaycast : MonoBehaviour
             {
                 GetComponent<InteractableGameObject>().GeneratorDetect();
             }
+            else if(hit.collider.tag == "Data" && GetComponent<QuestLog>().quest1 == false)
+            {
+                GetComponent<InteractableGameObject>().DataDetect();
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    GetComponent<InteractableGameObject>().NoDataDetect();
+                    dataCharacter.GetComponent<DialogueTrigger>().TriggerDialogue();
+                    GetComponent<QuestLog>().quest1 = true;
+                }
+            }
             else
             {
                 GetComponent<InteractableGameObject>().NoGeneratorDetect();
                 GetComponent<InteractableGameObject>().NoNextSceneDetect();
+                GetComponent<InteractableGameObject>().NoDataDetect();
             }
         }
     }

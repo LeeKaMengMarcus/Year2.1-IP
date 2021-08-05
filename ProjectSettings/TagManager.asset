@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Generator
   - NextScene
+  - Data
+  - Data2
   layers:
   - Default
   - TransparentFX
