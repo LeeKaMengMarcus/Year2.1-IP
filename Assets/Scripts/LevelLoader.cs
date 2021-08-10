@@ -9,9 +9,14 @@ public class LevelLoader : MonoBehaviour
 
     public float transistionTime = 1f;
 
+    public GameObject cameraScript;
+
 
     public void LoadNextLevel()
     {
+        GetComponent<PlayerMovementScript>().speed = 0f;
+        GetComponent<PlayerMovementScript>().jumpHeight = 0f;
+        cameraScript.GetComponent<MouseLook>().mouseSensitivity = 0f;
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
     }
 

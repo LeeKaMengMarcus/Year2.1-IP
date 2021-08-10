@@ -1,53 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 
 public class InteractableGameObject : MonoBehaviour
 {
-    public GameObject generator;
-    public GameObject generatorText;
-    public GameObject nextSceneText;
-    public GameObject dataDetect;
-    public GameObject computerDetect;
+    public GameObject guideUi;
+    public TMP_Text guide;
 
-    public void GeneratorDetect()
+    public void ShowGuide()
     {
-        generatorText.SetActive(true);
+        guideUi.SetActive(true);
     }
-
-    public void NoGeneratorDetect()
+    public void HideGuide()
     {
-        generatorText.SetActive(false);
-    }
-
-    public void NextSceneDetect()
-    {
-        nextSceneText.SetActive(true);
-    }
-
-    public void NoNextSceneDetect()
-    {
-        nextSceneText.SetActive(false);
-    }
-
-    public void DataDetect()
-    {
-        dataDetect.SetActive(true);
-    }
-
-    public void NoDataDetect()
-    {
-        dataDetect.SetActive(false);
-    }
-
-    public void ComputerDetect()
-    {
-        computerDetect.SetActive(true);
-    }
-    public void NoComputerDetect()
-    {
-        computerDetect.SetActive(false);
-        print("hi");
+        guideUi.SetActive(false);
     }
 }

@@ -14,7 +14,8 @@ public class PlayerRaycast : MonoBehaviour
         {
             if(hit.collider.tag == "NextScene")
             {
-                GetComponent<InteractableGameObject>().NextSceneDetect();
+                GetComponent<InteractableGameObject>().guide.text = ("Press 'E' to enter.");
+                GetComponent<InteractableGameObject>().ShowGuide();
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     GetComponent<LevelLoader>().LoadNextLevel();
@@ -22,21 +23,24 @@ public class PlayerRaycast : MonoBehaviour
             }
             else if(hit.collider.tag == "Generator")
             {
-                GetComponent<InteractableGameObject>().GeneratorDetect();
+                GetComponent<InteractableGameObject>().guide.text = ("Press 'E' to interact.");
+                GetComponent<InteractableGameObject>().ShowGuide();
             }
             else if(hit.collider.tag == "Data" && GetComponent<QuestLog>().quest1 == false)
             {
-                GetComponent<InteractableGameObject>().DataDetect();
+                GetComponent<InteractableGameObject>().guide.text = ("Press 'E' to talk.");
+                GetComponent<InteractableGameObject>().ShowGuide();
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    GetComponent<InteractableGameObject>().NoDataDetect();
+                    GetComponent<InteractableGameObject>().HideGuide();
                     dataCharacter.GetComponent<DialogueTrigger>().TriggerDialogue();
                     GetComponent<QuestLog>().quest1 = true;
                 }
             }
             else if(hit.collider.tag == "Computer")
             {
-                GetComponent<InteractableGameObject>().ComputerDetect();
+                GetComponent<InteractableGameObject>().guide.text = ("Press 'E' to view.");
+                GetComponent<InteractableGameObject>().ShowGuide();
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     Cursor.lockState = CursorLockMode.None;
@@ -45,10 +49,7 @@ public class PlayerRaycast : MonoBehaviour
             }
             else
             {
-                GetComponent<InteractableGameObject>().NoGeneratorDetect();
-                GetComponent<InteractableGameObject>().NoNextSceneDetect();
-                GetComponent<InteractableGameObject>().NoDataDetect();
-                GetComponent<InteractableGameObject>().NoComputerDetect();
+                GetComponent<InteractableGameObject>().HideGuide();
 
             }
         }
