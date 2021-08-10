@@ -8,6 +8,7 @@ TagManager:
   - NextScene
   - Data
   - Data2
+  - Computer
   layers:
   - Default
   - TransparentFX

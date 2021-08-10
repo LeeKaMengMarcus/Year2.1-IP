@@ -34,11 +34,22 @@ public class PlayerRaycast : MonoBehaviour
                     GetComponent<QuestLog>().quest1 = true;
                 }
             }
+            else if(hit.collider.tag == "Computer")
+            {
+                GetComponent<InteractableGameObject>().ComputerDetect();
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    Cursor.lockState = CursorLockMode.None;
+                    GetComponent<Player>().ComputerMenu();
+                }
+            }
             else
             {
                 GetComponent<InteractableGameObject>().NoGeneratorDetect();
                 GetComponent<InteractableGameObject>().NoNextSceneDetect();
                 GetComponent<InteractableGameObject>().NoDataDetect();
+                GetComponent<InteractableGameObject>().NoComputerDetect();
+
             }
         }
     }

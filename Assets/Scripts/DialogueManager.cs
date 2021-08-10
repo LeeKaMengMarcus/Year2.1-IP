@@ -13,6 +13,9 @@ public class DialogueManager : MonoBehaviour
 
     private Queue<string> sentences;
 
+    public GameObject playerMovement;
+    public GameObject playerCamera;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +24,9 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue (Dialogue dialogue)
     {
+        playerCamera.GetComponent<MouseLook>().mouseSensitivity = 0f;
+        playerMovement.GetComponent<PlayerMovementScript>().speed = 0f;
+        playerMovement.GetComponent<PlayerMovementScript>().jumpHeight = 0f;
         chatUi.SetActive(true);
 
         Cursor.lockState = CursorLockMode.None;
@@ -54,5 +60,8 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("end of conversation");
         Cursor.lockState = CursorLockMode.Locked;
         chatUi.SetActive(false);
+        playerCamera.GetComponent<MouseLook>().mouseSensitivity = 100f;
+        playerMovement.GetComponent<PlayerMovementScript>().speed = 12f;
+        playerMovement.GetComponent<PlayerMovementScript>().jumpHeight = 3f;
     }
 }

@@ -9,6 +9,7 @@ public class InteractableGameObject : MonoBehaviour
     public GameObject generatorText;
     public GameObject nextSceneText;
     public GameObject dataDetect;
+    public GameObject computerDetect;
 
     public void GeneratorDetect()
     {
@@ -29,12 +30,24 @@ public class InteractableGameObject : MonoBehaviour
     {
         nextSceneText.SetActive(false);
     }
+
     public void DataDetect()
     {
         dataDetect.SetActive(true);
     }
+
     public void NoDataDetect()
     {
         dataDetect.SetActive(false);
+    }
+
+    public void ComputerDetect()
+    {
+        computerDetect.SetActive(true);
+    }
+    public void NoComputerDetect()
+    {
+        computerDetect.SetActive(false);
+        print("hi");
     }
 }

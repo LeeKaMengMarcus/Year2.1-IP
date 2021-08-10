@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public GameObject menuUi;
+    public GameObject computerUi;
 
     // Update is called once per frame
     void Update()
@@ -20,5 +21,14 @@ public class Player : MonoBehaviour
                 menuUi.SetActive(true);
             }
         }
+    }
+
+    public void ComputerMenu()
+    {
+        computerUi.SetActive(true);
+    }
+    public void CloseComputerMenu()
+    {
+        computerUi.SetActive(false);
     }
 }
