@@ -15,9 +15,11 @@ public class Player : MonoBehaviour
             if(menuUi.activeSelf == true)
             {
                 menuUi.SetActive(false);
+                Cursor.lockState = CursorLockMode.Locked;
             }
             else
             {
+                Cursor.lockState = CursorLockMode.None;
                 menuUi.SetActive(true);
             }
         }
