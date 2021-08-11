@@ -171,6 +171,74 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &70266666 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7097659545015131689, guid: 2e495b8e43576274a83eb852a585fa96, type: 3}
+  m_PrefabInstance: {fileID: 3383075830498975677}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &70266667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70266666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 874e472b20a7c3346964af28989c9585, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lookRadius: 10
+--- !u!114 &70266668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70266666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32ee465ec18b5e84dafba45cf46283f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+--- !u!195 &70266669
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70266666}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 2
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!136 &70266671
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70266666}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &170171480
 GameObject:
   m_ObjectHideFlags: 0
@@ -1127,6 +1195,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4354465822509128, guid: 85dfab9623c67784fa7894de63cd1604, type: 3}
   m_PrefabInstance: {fileID: 1556901916}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1298164347 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6424581852646808649, guid: 45dcbd395f216334b95390f76856de57, type: 3}
+  m_PrefabInstance: {fileID: 6190719914689365155}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1298164349
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298164347}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1298164350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298164347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b3c5fa5e83e0146a5bd5c244bf8fef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Data
+    sentences:
+    - "You\u2019re here! I did it! I finally did it!"
+    - After countless tries and sleepless nights, I perfectly coded a (bug) software
+      that allows humans to access the computer world! This is our salvation!
+    - Oh sorry about that, was i rambling?
+    - "Right, right. I\u2019m this computer\u2019s location data, and you have currently
+      entered the world of your computer."
+    - "The city we are in holds all your computer\u2019s data. However, a series
+      of unfortunate events have struck the city with a virus invasion."
+    - There is no time for regrets, and thankfully for you (and for us), there is
+      light at the end of this tunnel!
+    - "Not just ANY sword! This sword has been specially crafted by yours truly to
+      fight off viruses. Us datas are not made to fight, so that\u2019s where you
+      come into the picture."
+    - I knew I could count on you! Nothing less from our owner!
+    - "The viruses have currently overrun our main data storage and has captured
+      our dearest password and personal information datas! They are preparing to
+      leak your information and leave us vulnerable to even more attacks. We wouldn\u2019t
+      want that, do we?"
+    - "Ugh, I\u2019d rather you not give me such a nickname yet, we\u2019re not that
+      chummy"
+    - "The main data storage is located at the centre of the city, but there\u2019s
+      going to be viruses patrolling the surrounding area, so we\u2019ve got to be
+      careful. But with you around, there\u2019s nothing to be afraid of."
+    - "Well then, let\u2019s go already!"
 --- !u!1 &1314836453
 GameObject:
   m_ObjectHideFlags: 0
@@ -1788,23 +1913,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ca002da428252441b92f28d83c8a65f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Shape:
-    id: 0
-  m_Size: {x: -39.509365, y: 0, z: 46.147156}
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-  m_PivotLocation: 1
-  m_PivotPosition: {x: 0, y: 0, z: 0}
-  m_UnmodifiedMeshVersion: 831
-  m_ShapeBox:
-    m_Center: {x: -19.754683, y: 0.00009976158, z: 23.073578}
-    m_Extent: {x: 0.5, y: 0, z: 0.5}
-  references:
-    version: 1
-    00000000:
-      type: {class: Plane, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
-      data:
-        m_HeightSegments: 1
-        m_WidthSegments: 1
 --- !u!114 &2025861171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2146,6 +2254,14 @@ PrefabInstance:
       propertyPath: menuUi
       value: 
       objectReference: {fileID: 1441151834}
+    - target: {fileID: 1855606695275483692, guid: bb52359365f1d0a41b13bc146d70f5f2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.062
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855606695275483692, guid: bb52359365f1d0a41b13bc146d70f5f2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.06
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb52359365f1d0a41b13bc146d70f5f2, type: 3}
 --- !u!1001 &3383075830498975677
@@ -2155,9 +2271,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 171606982881800509, guid: 2e495b8e43576274a83eb852a585fa96, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 889609677535294418, guid: 2e495b8e43576274a83eb852a585fa96, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3470618273812995751, guid: 2e495b8e43576274a83eb852a585fa96, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228048338253784932, guid: 2e495b8e43576274a83eb852a585fa96, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6542253077936066331, guid: 2e495b8e43576274a83eb852a585fa96, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6590901718482064282, guid: 2e495b8e43576274a83eb852a585fa96, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7097659545015131689, guid: 2e495b8e43576274a83eb852a585fa96, type: 3}
       propertyPath: m_Name
       value: virus
+      objectReference: {fileID: 0}
+    - target: {fileID: 7097659545015131689, guid: 2e495b8e43576274a83eb852a585fa96, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7580723023158297747, guid: 2e495b8e43576274a83eb852a585fa96, type: 3}
       propertyPath: m_RootOrder
@@ -2169,7 +2313,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7580723023158297747, guid: 2e495b8e43576274a83eb852a585fa96, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.4803998
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 7580723023158297747, guid: 2e495b8e43576274a83eb852a585fa96, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2202,6 +2346,10 @@ PrefabInstance:
     - target: {fileID: 7580723023158297747, guid: 2e495b8e43576274a83eb852a585fa96, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8489887278951405888, guid: 2e495b8e43576274a83eb852a585fa96, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e495b8e43576274a83eb852a585fa96, type: 3}
@@ -2364,6 +2512,10 @@ PrefabInstance:
     - target: {fileID: 6424581852646808649, guid: 45dcbd395f216334b95390f76856de57, type: 3}
       propertyPath: m_Name
       value: data
+      objectReference: {fileID: 0}
+    - target: {fileID: 6424581852646808649, guid: 45dcbd395f216334b95390f76856de57, type: 3}
+      propertyPath: m_TagString
+      value: Data
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45dcbd395f216334b95390f76856de57, type: 3}
