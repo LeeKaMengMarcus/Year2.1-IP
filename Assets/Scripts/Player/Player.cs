@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = 180;
+        currentHealth = 100;
     }
 
     // Update is called once per frame

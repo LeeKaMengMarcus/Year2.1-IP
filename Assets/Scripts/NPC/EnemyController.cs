@@ -6,10 +6,26 @@ using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
     public float lookRadius = 10f;
+    public int attackDamage = 5;
     public GameObject player;
 
     Transform target;
     NavMeshAgent agent;
+    LayerMask whatIsGround, whatIsPlayer;
+
+    //patrol
+    public Vector3 walkPoint;
+    bool walkPointSet;
+    public float walkPointRange;
+
+    //attaking
+    public float timeBetweenAttacks;
+    bool alreadyAttacked;
+
+    //states
+    public float sightRange, attackRange;
+    public bool playerInsigtRange, playerInAttackRange;
+
 
     // Start is called before the first frame update
     void Start()
@@ -29,15 +45,77 @@ public class EnemyController : MonoBehaviour
 
             if (distance <= agent.stoppingDistance)
             {
-                //attack
                 FaceTarget();
+                AttackPlayer();
             }
         }
+
 
         if (GetComponent<Enemy>().currentHealth <= 0)
         {
             this.enabled = false;
         }
+
+        else
+        {
+            Patrol();
+        }
+    }
+
+    public void Patrol()
+    {
+        if (!walkPointSet) SearchWalkPoint();
+
+        if (walkPointSet)
+        {
+            agent.SetDestination(walkPoint);
+        }
+        Vector3 distanceToWalkPoint = transform.position - walkPoint;
+
+        //walkpoint reached
+        if (distanceToWalkPoint.magnitude < 1f)
+        {
+            walkPointSet = false;
+        }
+    }
+
+    public void SearchWalkPoint()
+    {
+        float randomZ = Random.Range(-walkPointRange, walkPointRange);
+        float randomX = Random.Range(-walkPointRange, walkPointRange);
+
+        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+
+        if(Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
+        {
+            walkPointSet = true;
+        }
+    }
+
+    public void AttackPlayer()
+    {
+        agent.SetDestination(transform.position);
+        if (!alreadyAttacked)
+        {
+            TakeDamage(attackDamage);
+
+            alreadyAttacked = true;
+            Invoke(nameof(ResetAttack), timeBetweenAttacks);
+        }
+    }
+
+    private void ResetAttack()
+    {
+        alreadyAttacked = false;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        player.GetComponent<Player>().currentHealth -= damage;
+
+        // Play Hurt animation
+        //animator.SetTrigger("Hurt");
+
     }
 
     void FaceTarget()
