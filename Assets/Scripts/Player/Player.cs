@@ -7,6 +7,15 @@ public class Player : MonoBehaviour
     public GameObject menuUi;
     public GameObject computerUi;
 
+    public int maxHealth = 100;
+    public int currentHealth;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        currentHealth = 180;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -34,3 +43,5 @@ public class Player : MonoBehaviour
         computerUi.SetActive(false);
     }
 }
+
+

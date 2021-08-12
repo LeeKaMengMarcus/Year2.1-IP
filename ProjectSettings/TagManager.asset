@@ -9,6 +9,8 @@ TagManager:
   - Data
   - Data2
   - Computer
+  - EnemyAttackRange
+  - other
   layers:
   - Default
   - TransparentFX
@@ -19,9 +21,9 @@ TagManager:
   - Ground
   - Enemy
   - Collectable
-  - 
-  - 
-  - 
+  - EnemyAttackRange
+  - Player
+  - other
   - 
   - 
   - 
