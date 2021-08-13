@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour
 {
 
-    //public Animator animator;
+    public Animator swordSwing;
 
     public Transform attackPoint;
     public LayerMask enemyLayers;
@@ -23,6 +23,7 @@ public class PlayerCombat : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
+                swordSwing.SetTrigger("swing");
                 Attack();
                 nextAttackTime = Time.time + 1f / attackRate;
             }

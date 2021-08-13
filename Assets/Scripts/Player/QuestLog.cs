@@ -5,7 +5,7 @@ using TMPro;
 
 public class QuestLog : MonoBehaviour
 {
-    public Animator popUp;
+    //public Animator popUp;
 
     public bool quest1;
     public bool quest2;
@@ -19,7 +19,7 @@ public class QuestLog : MonoBehaviour
 
     private void Start()
     {
-        enemyKilled = 0;
+        
     }
 
     private void Update()

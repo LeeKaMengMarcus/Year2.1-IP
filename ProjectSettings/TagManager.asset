@@ -13,6 +13,10 @@ TagManager:
   - other
   - DataHouseExit
   - FortressEntrance
+  - UpgradeEntrance
+  - Modata
+  - Upgrade
+  - Get
   layers:
   - Default
   - TransparentFX
@@ -27,7 +31,7 @@ TagManager:
   - Player
   - other
   - pog
-  - 
+  - Data2
   - 
   - 
   - 
