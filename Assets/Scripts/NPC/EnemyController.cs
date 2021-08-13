@@ -11,7 +11,7 @@ public class EnemyController : MonoBehaviour
 
     Transform target;
     NavMeshAgent agent;
-    LayerMask whatIsGround, whatIsPlayer;
+    public LayerMask whatIsGround, whatIsPlayer;
 
     //patrol
     public Vector3 walkPoint;
@@ -49,6 +49,10 @@ public class EnemyController : MonoBehaviour
                 AttackPlayer();
             }
         }
+        else
+        {
+            Patrol();
+        }
 
 
         if (GetComponent<Enemy>().currentHealth <= 0)
@@ -56,10 +60,6 @@ public class EnemyController : MonoBehaviour
             this.enabled = false;
         }
 
-        else
-        {
-            Patrol();
-        }
     }
 
     public void Patrol()
@@ -73,7 +73,7 @@ public class EnemyController : MonoBehaviour
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
         //walkpoint reached
-        if (distanceToWalkPoint.magnitude < 1f)
+        if (distanceToWalkPoint.magnitude < 2f)
         {
             walkPointSet = false;
         }

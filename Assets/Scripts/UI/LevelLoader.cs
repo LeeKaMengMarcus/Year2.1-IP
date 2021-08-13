@@ -11,13 +11,22 @@ public class LevelLoader : MonoBehaviour
 
     public GameObject cameraScript;
 
+    public GameObject player;
+
 
     public void LoadNextLevel()
     {
-        GetComponent<PlayerMovementScript>().speed = 0f;
-        GetComponent<PlayerMovementScript>().jumpHeight = 0f;
-        cameraScript.GetComponent<MouseLook>().mouseSensitivity = 0f;
-        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+        if(player == null)
+        {
+            StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+        }
+        else
+        {
+            player.GetComponent<PlayerMovementScript>().speed = 0f;
+            player.GetComponent<PlayerMovementScript>().jumpHeight = 0f;
+            cameraScript.GetComponent<MouseLook>().mouseSensitivity = 0f;
+            StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+        }
     }
 
     IEnumerator LoadLevel(int levelIndex)

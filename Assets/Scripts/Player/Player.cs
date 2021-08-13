@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public GameObject menuUi;
+    public GameObject questUi;
     public GameObject computerUi;
 
     public int maxHealth = 100;
@@ -21,7 +22,12 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(menuUi.activeSelf == true)
+            if (questUi.activeSelf == true)
+            {
+                questUi.SetActive(false);
+                menuUi.SetActive(true);
+            }
+            else if(menuUi.activeSelf == true)
             {
                 menuUi.SetActive(false);
                 Cursor.lockState = CursorLockMode.Locked;

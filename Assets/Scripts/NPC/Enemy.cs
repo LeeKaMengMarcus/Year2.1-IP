@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour
 
     public HealthBar healthBar;
 
+    public GameObject player;
+
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +39,7 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         Debug.Log("enemy died");
+        player.GetComponent<QuestLog>().enemyKilled += 1;
 
         // Die animation
         //animator.SetBool("IsDead", true);

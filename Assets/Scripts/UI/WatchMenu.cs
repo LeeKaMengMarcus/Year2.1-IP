@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.SceneManagement;
 
 public class WatchMenu : MonoBehaviour
@@ -10,6 +11,8 @@ public class WatchMenu : MonoBehaviour
     public float transistionTime = 1f;
 
     public GameObject menuUi;
+
+    public GameObject questUi;
 
     public GameObject cameraScript;
 
@@ -41,6 +44,18 @@ public class WatchMenu : MonoBehaviour
         player.GetComponent<PlayerMovementScript>().jumpHeight = 0f;
         cameraScript.GetComponent<MouseLook>().mouseSensitivity = 0f;
         StartCoroutine(LoadMenu(SceneManager.GetActiveScene().buildIndex - build));
+    }
+
+    public void OpenNote()
+    {
+        menuUi.SetActive(false);
+        questUi.SetActive(true);
+    }
+
+    public void BackToWatch()
+    {
+        questUi.SetActive(false);
+        menuUi.SetActive(true);
     }
 
     IEnumerator LoadMenu(int levelIndex)

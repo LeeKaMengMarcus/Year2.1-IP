@@ -10,15 +10,40 @@ public class PlayerRaycast : MonoBehaviour
     {
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 100))
+        if (Physics.Raycast(ray, out hit, 10))
         {
-            if(hit.collider.tag == "NextScene")
+            if(hit.collider.tag == "DataHouseExit")
             {
-                GetComponent<InteractableGameObject>().guide.text = ("Press 'E' to enter.");
-                GetComponent<InteractableGameObject>().ShowGuide();
-                if (Input.GetKeyDown(KeyCode.E))
+                if(GetComponent<QuestLog>().quest1 == true)
                 {
-                    GetComponent<LevelLoader>().LoadNextLevel();
+                    GetComponent<InteractableGameObject>().guide.text = ("Press 'E' to Exit.");
+                    GetComponent<InteractableGameObject>().ShowGuide();
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        GetComponent<LevelLoader>().LoadNextLevel();
+                    }
+                }
+                else
+                {
+                    GetComponent<InteractableGameObject>().guide.text = ("Talk to 'Data' first.");
+                    GetComponent<InteractableGameObject>().ShowGuide();
+                }
+            }
+            else if(hit.collider.tag == "FortressEntrance")
+            {
+                if(GetComponent<QuestLog>().enemyKilled >= 6)
+                {
+                    GetComponent<InteractableGameObject>().guide.text = ("Press 'E' to Enter.");
+                    GetComponent<InteractableGameObject>().ShowGuide();
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        GetComponent<LevelLoader>().LoadNextLevel();
+                    }
+                }
+                else
+                {
+                    GetComponent<InteractableGameObject>().guide.text = ("Defeat all the enemies.");
+                    GetComponent<InteractableGameObject>().ShowGuide();
                 }
             }
             else if(hit.collider.tag == "Generator")
