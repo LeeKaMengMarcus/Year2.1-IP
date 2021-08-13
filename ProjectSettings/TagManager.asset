@@ -8,6 +8,11 @@ TagManager:
   - NextScene
   - Data
   - Data2
+  - Computer
+  - EnemyAttackRange
+  - other
+  - DataHouseExit
+  - FortressEntrance
   layers:
   - Default
   - TransparentFX
@@ -18,10 +23,10 @@ TagManager:
   - Ground
   - Enemy
   - Collectable
-  - 
-  - 
-  - 
-  - 
+  - EnemyAttackRange
+  - Player
+  - other
+  - pog
   - 
   - 
   - 
