@@ -15070,6 +15070,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3773832606438082562, guid: ec00eaedbd6c9a34b8bd6768d04157c0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3773832606851638405, guid: ec00eaedbd6c9a34b8bd6768d04157c0, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3773832606851638405, guid: ec00eaedbd6c9a34b8bd6768d04157c0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4851160036473031743, guid: ec00eaedbd6c9a34b8bd6768d04157c0, type: 3}
       propertyPath: m_Name
       value: Main 1
@@ -15092,7 +15104,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7992459482973471621, guid: ec00eaedbd6c9a34b8bd6768d04157c0, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7992459483101156623, guid: ec00eaedbd6c9a34b8bd6768d04157c0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -15165,6 +15177,10 @@ PrefabInstance:
     - target: {fileID: 8388924959467772644, guid: ec00eaedbd6c9a34b8bd6768d04157c0, type: 3}
       propertyPath: enemyKilled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388924959467772645, guid: ec00eaedbd6c9a34b8bd6768d04157c0, type: 3}
+      propertyPath: death
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8388924959467772649, guid: ec00eaedbd6c9a34b8bd6768d04157c0, type: 3}
       propertyPath: cage

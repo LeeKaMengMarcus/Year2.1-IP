@@ -22,7 +22,6 @@ public class Player : MonoBehaviour
     //get camera info
     public GameObject cameraScript;
 
-
     //set health and capacity
     public int maxHealth = 100;
     public int currentHealth;
