@@ -1,3 +1,11 @@
+/******************************************************************************
+Author: Meagan
+
+Name of Class: EnemyController
+
+Description of Class: Enemy movement and behaviour towards player.
+
+******************************************************************************/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,12 +13,18 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
+    //find player
     public float lookRadius = 10f;
+    //set damage
     public int attackDamage = 5;
+    //info fro player
     public GameObject player;
 
+    //target player location
     Transform target;
+    //set navmesh
     NavMeshAgent agent;
+    //set player layer and ground layer
     public LayerMask whatIsGround, whatIsPlayer;
 
     //patrol
@@ -26,23 +40,22 @@ public class EnemyController : MonoBehaviour
     public float sightRange, attackRange;
     public bool playerInsigtRange, playerInAttackRange;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
     }
-
-    // Update is called once per frame
     void Update()
     {
+        //displacement of player
         float distance = Vector3.Distance(target.position, transform.position);
 
+        //check if player in radius
         if (distance <= lookRadius)
         {
             agent.SetDestination(target.position);
 
+            //stop infront of player
             if (distance <= agent.stoppingDistance)
             {
                 FaceTarget();
@@ -54,7 +67,7 @@ public class EnemyController : MonoBehaviour
             Patrol();
         }
 
-
+        //check if dead
         if (GetComponent<Enemy>().currentHealth <= 0)
         {
             this.enabled = false;
@@ -79,13 +92,17 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    //find a place to go
     public void SearchWalkPoint()
     {
+        //randomized location
         float randomZ = Random.Range(-walkPointRange, walkPointRange);
         float randomX = Random.Range(-walkPointRange, walkPointRange);
 
+        //set location
         walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
+        //see if location is reachable
         if(Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
         {
             walkPointSet = true;
@@ -97,8 +114,10 @@ public class EnemyController : MonoBehaviour
         agent.SetDestination(transform.position);
         if (!alreadyAttacked)
         {
+            //deal damage
             TakeDamage(attackDamage);
 
+            //make delay
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
@@ -111,13 +130,11 @@ public class EnemyController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        //deal damage
         player.GetComponent<Player>().currentHealth -= damage;
-
-        // Play Hurt animation
-        //animator.SetTrigger("Hurt");
-
     }
 
+    //look to player
     void FaceTarget()
     {
         Vector3 direction = (target.position - transform.position).normalized;

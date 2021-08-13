@@ -1,3 +1,11 @@
+/******************************************************************************
+Author: Marcus
+
+Name of Class: PlayerManager
+
+Description of Class: Keeps track of player.
+
+******************************************************************************/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
