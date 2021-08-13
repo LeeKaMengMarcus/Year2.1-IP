@@ -23,6 +23,8 @@ TagManager:
   - Key2
   - Key3
   - HiddenDoor
+  - UnlockCage
+  - Escape
   layers:
   - Default
   - TransparentFX

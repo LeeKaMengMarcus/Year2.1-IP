@@ -33,6 +33,10 @@ public class PlayerRaycast : MonoBehaviour
     public GameObject key3;
     public GameObject key2;
 
+    public GameObject cage;
+
+    public GameObject winScreen;
+
     void Update()
     {
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -48,7 +52,7 @@ public class PlayerRaycast : MonoBehaviour
                         GetComponent<LevelLoader>().LoadNextLevel();
                     }
             }
-            if (hit.collider.tag == "HiddenDoor")
+            else if (hit.collider.tag == "HiddenDoor")
             {
                     GetComponent<InteractableGameObject>().guide.text = ("Press 'E' to unlock.");
                     GetComponent<InteractableGameObject>().ShowGuide();
@@ -57,8 +61,33 @@ public class PlayerRaycast : MonoBehaviour
                     hiddenDoor.SetActive(false);
                     }
             }
+            else if (hit.collider.tag == "UnlockCage")
+            {
+                    GetComponent<InteractableGameObject>().guide.text = ("Press 'E' to unlock.");
+                    GetComponent<InteractableGameObject>().ShowGuide();
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                    cage.SetActive(false);
+                    }
+            }
+            
+            else if (hit.collider.tag == "Escape")
+            {
+                if(GetComponent<QuestLog>().enemyKilled >= 9){
+
+                    GetComponent<InteractableGameObject>().guide.text = ("Press 'E' to exit.");
+                    GetComponent<InteractableGameObject>().ShowGuide();
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                    winScreen.SetActive(true);
+                    }
+                }
+            }
+            
             else if (hit.collider.tag == "HiddenKey")
             {
+                GetComponent<InteractableGameObject>().guide.text = ("Press 'E' to collect.");
+                GetComponent<InteractableGameObject>().ShowGuide();
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     hideKey = true;
@@ -68,6 +97,8 @@ public class PlayerRaycast : MonoBehaviour
             }
             else if (hit.collider.tag == "Key1")
             {
+                GetComponent<InteractableGameObject>().guide.text = ("Press 'E' to collect.");
+                GetComponent<InteractableGameObject>().ShowGuide();
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     GetComponent<QuestLog>().key += 1;
@@ -76,6 +107,8 @@ public class PlayerRaycast : MonoBehaviour
             }
             else if (hit.collider.tag == "Key2")
             {
+                GetComponent<InteractableGameObject>().guide.text = ("Press 'E' to collect.");
+                GetComponent<InteractableGameObject>().ShowGuide();
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     GetComponent<QuestLog>().key += 1;
@@ -84,6 +117,8 @@ public class PlayerRaycast : MonoBehaviour
             }
             else if (hit.collider.tag == "Key3")
             {
+                GetComponent<InteractableGameObject>().guide.text = ("Press 'E' to collect.");
+                GetComponent<InteractableGameObject>().ShowGuide();
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     GetComponent<QuestLog>().key += 1;
