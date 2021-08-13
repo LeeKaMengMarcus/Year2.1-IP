@@ -8540,7 +8540,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh81978
+  m_Name: pb_Mesh40630
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8956,7 +8956,7 @@ GameObject:
   - component: {fileID: 1999122027}
   m_Layer: 0
   m_Name: Cube (10)
-  m_TagString: Untagged
+  m_TagString: NextScene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8969,7 +8969,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1999122025}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 3206, y: -166.93, z: -2444.7}
+  m_LocalPosition: {x: 3206, y: -173, z: -2452.7}
   m_LocalScale: {x: 138.78712, y: 195.50423, z: 13.334764}
   m_Children: []
   m_Father: {fileID: 1173756876}
@@ -20142,9 +20142,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3773832605619281763, guid: ec00eaedbd6c9a34b8bd6768d04157c0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4851160036473031743, guid: ec00eaedbd6c9a34b8bd6768d04157c0, type: 3}
       propertyPath: m_Name
       value: Main
+      objectReference: {fileID: 0}
+    - target: {fileID: 7992459482221486338, guid: ec00eaedbd6c9a34b8bd6768d04157c0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388924958545419993, guid: ec00eaedbd6c9a34b8bd6768d04157c0, type: 3}
+      propertyPath: m_StopNaN
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388924958545419993, guid: ec00eaedbd6c9a34b8bd6768d04157c0, type: 3}
+      propertyPath: m_Antialiasing
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8388924959467772649, guid: ec00eaedbd6c9a34b8bd6768d04157c0, type: 3}
       propertyPath: moData

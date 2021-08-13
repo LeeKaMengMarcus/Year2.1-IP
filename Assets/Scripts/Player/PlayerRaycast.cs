@@ -25,13 +25,74 @@ public class PlayerRaycast : MonoBehaviour
 
     public GameObject upgradeSword;
 
+    public GameObject hiddenDoor;
+
+    public bool hideKey = false;
+
+    public GameObject key1;
+    public GameObject key3;
+    public GameObject key2;
+
     void Update()
     {
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 10))
         {
-            if (hit.collider.tag == "DataHouseExit")
+            if (hit.collider.tag == "NextScene")
+            {
+                    GetComponent<InteractableGameObject>().guide.text = ("Press 'E' to enter.");
+                    GetComponent<InteractableGameObject>().ShowGuide();
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        GetComponent<LevelLoader>().LoadNextLevel();
+                    }
+            }
+            if (hit.collider.tag == "HiddenDoor")
+            {
+                    GetComponent<InteractableGameObject>().guide.text = ("Press 'E' to unlock.");
+                    GetComponent<InteractableGameObject>().ShowGuide();
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                    hiddenDoor.SetActive(false);
+                    }
+            }
+            else if (hit.collider.tag == "HiddenKey")
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    hideKey = true;
+                    GetComponent<QuestLog>().key += 1;
+                    GetComponent<QuestLog>().hiddenKey.SetActive(false);
+                }
+            }
+            else if (hit.collider.tag == "Key1")
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    GetComponent<QuestLog>().key += 1;
+                    key1.SetActive(false);
+                }
+            }
+            else if (hit.collider.tag == "Key2")
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    GetComponent<QuestLog>().key += 1;
+                    key2.SetActive(false);
+                }
+            }
+            else if (hit.collider.tag == "Key3")
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    GetComponent<QuestLog>().key += 1;
+                    key3.SetActive(false);
+                }
+            }
+
+
+            else if (hit.collider.tag == "DataHouseExit")
             {
                 if (GetComponent<QuestLog>().quest1 == true)
                 {
@@ -72,6 +133,8 @@ public class PlayerRaycast : MonoBehaviour
                     upgradeSword.SetActive(false);
                     swordBlue.SetActive(true);
                     getUpgrade = true;
+                    GetComponent<QuestLog>().quest2 = false;
+                    GetComponent<QuestLog>().quest3 = true;
                 }
             }
             

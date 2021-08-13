@@ -470,6 +470,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6481905243820258963, guid: dc4c56edd0ccc5e4fbe1a2990f2d463d, type: 3}
   m_PrefabInstance: {fileID: 6481905244013583856}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &645093635 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6481905244944465726, guid: dc4c56edd0ccc5e4fbe1a2990f2d463d, type: 3}
+  m_PrefabInstance: {fileID: 6481905244013583856}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &795449981
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,6 +779,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4dac4128cdb52e74e8a9e6a04851ad36, type: 3}
   m_PrefabInstance: {fileID: 1158663412}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1254673902 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6481905243947435605, guid: dc4c56edd0ccc5e4fbe1a2990f2d463d, type: 3}
+  m_PrefabInstance: {fileID: 6481905244013583856}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &1316843673
 Mesh:
   m_ObjectHideFlags: 0
@@ -938,6 +954,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1832271794 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3165548736992238894, guid: dc4c56edd0ccc5e4fbe1a2990f2d463d, type: 3}
+  m_PrefabInstance: {fileID: 6481905244013583856}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2144332837 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6481905245585945045, guid: dc4c56edd0ccc5e4fbe1a2990f2d463d, type: 3}
@@ -1469,8 +1490,12 @@ MonoBehaviour:
   quest1: 0
   quest2: 0
   quest3: 0
-  questUi: {fileID: 0}
-  questInfo: {fileID: 0}
+  key: 0
+  questUi: {fileID: 645093635}
+  hiddenKey: {fileID: 0}
+  questInfo: {fileID: 1254673902}
+  hideDoor: 0
+  enemyKilled: 0
 --- !u!114 &4378146085105071381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1484,21 +1509,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuUi: {fileID: 219634355}
+  questUi: {fileID: 645093635}
   computerUi: {fileID: 2144332837}
+  deathScreen: {fileID: 1832271794}
+  cameraScript: {fileID: 4378146086297694511}
   maxHealth: 100
   currentHealth: 0
---- !u!114 &4378146085105071382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4378146085105071388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00d0f46fd1e5e784d86583343563f0d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4378146085105071384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1533,6 +1549,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dataCharacter: {fileID: 0}
+  moData: {fileID: 0}
+  ogStand: {fileID: 0}
+  updatedStand: {fileID: 0}
+  moDaTalked: 0
+  upgrade: {fileID: 0}
+  isUpgrade: 0
+  getUpgrade: 0
+  upgradeDoor: {fileID: 0}
+  swordBlue: {fileID: 0}
+  redSword: {fileID: 0}
+  upgradeSword: {fileID: 0}
+  hiddenDoor: {fileID: 0}
+  hideKey: 0
+  key1: {fileID: 0}
+  key3: {fileID: 0}
+  key2: {fileID: 0}
 --- !u!114 &4378146085105071386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1562,7 +1594,7 @@ MonoBehaviour:
   transition: {fileID: 6536327586235917525}
   transistionTime: 1
   cameraScript: {fileID: 4378146086297694511}
-  player: {fileID: 0}
+  player: {fileID: 4378146085105071388}
 --- !u!1 &4378146085105071388
 GameObject:
   m_ObjectHideFlags: 0
@@ -1579,7 +1611,6 @@ GameObject:
   - component: {fileID: 4378146085105071386}
   - component: {fileID: 4378146085105071387}
   - component: {fileID: 4378146085105071380}
-  - component: {fileID: 4378146085105071382}
   - component: {fileID: 4378146085105071381}
   - component: {fileID: 4378146085105071393}
   - component: {fileID: 4378146085105071392}
@@ -1638,6 +1669,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f030fbce1a839445af109e316dbac30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swordSwing: {fileID: 0}
   attackPoint: {fileID: 4378146085242293239}
   enemyLayers:
     serializedVersion: 2
@@ -2281,6 +2313,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 3708710026494020770, guid: dc4c56edd0ccc5e4fbe1a2990f2d463d, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6481905244199225158, guid: dc4c56edd0ccc5e4fbe1a2990f2d463d, type: 3}
       propertyPath: player
       value: 
@@ -2293,6 +2329,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 4378146085105071387}
+    - target: {fileID: 6930406229903423859, guid: dc4c56edd0ccc5e4fbe1a2990f2d463d, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc4c56edd0ccc5e4fbe1a2990f2d463d, type: 3}
 --- !u!95 &6536327586235917525 stripped

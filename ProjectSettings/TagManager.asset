@@ -17,6 +17,12 @@ TagManager:
   - Modata
   - Upgrade
   - Get
+  - Key
+  - HiddenKey
+  - Key1
+  - Key2
+  - Key3
+  - HiddenDoor
   layers:
   - Default
   - TransparentFX
@@ -32,7 +38,7 @@ TagManager:
   - other
   - pog
   - Data2
-  - 
+  - PostProcessing
   - 
   - 
   - 
