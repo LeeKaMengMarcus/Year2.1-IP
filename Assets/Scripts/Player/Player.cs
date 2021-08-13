@@ -8,13 +8,17 @@ public class Player : MonoBehaviour
     public GameObject questUi;
     public GameObject computerUi;
 
+    public GameObject deathScreen;
+
+    public GameObject cameraScript;
+
     public int maxHealth = 100;
     public int currentHealth;
 
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = 100;
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -38,6 +42,7 @@ public class Player : MonoBehaviour
                 menuUi.SetActive(true);
             }
         }
+        Die();
     }
 
     public void ComputerMenu()
@@ -47,6 +52,17 @@ public class Player : MonoBehaviour
     public void CloseComputerMenu()
     {
         computerUi.SetActive(false);
+    }
+
+    public void Die()
+    {
+        if (currentHealth <= 0)
+        {
+            GetComponent<PlayerMovementScript>().speed = 0f;
+            GetComponent<PlayerMovementScript>().jumpHeight = 0f;
+            cameraScript.GetComponent<MouseLook>().mouseSensitivity = 0f;
+            deathScreen.SetActive(true);
+        }
     }
 }
 
