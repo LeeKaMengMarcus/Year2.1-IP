@@ -15,6 +15,7 @@ public class PlayerCombat : MonoBehaviour
 
     public float attackRate = 2f;
     float nextAttackTime = 0f;
+    //public AudioSource swordSound;
 
     // Update is called once per frame
     void Update()
@@ -25,6 +26,7 @@ public class PlayerCombat : MonoBehaviour
             {
                 swordSwing.SetTrigger("swing");
                 Attack();
+                //swordSound.Play();
                 nextAttackTime = Time.time + 1f / attackRate;
             }
         }
